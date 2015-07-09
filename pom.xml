@@ -24,7 +24,7 @@
     <packaging>pom</packaging>
     <name>Che Tutorials :: Parent</name>
     <modules>
-	<!-- <module>che-tutorial-add-rest-api</module> -->
+	<module>che-tutorial-add-rest-api</module>
 	<!-- <module>che-tutorial-customize-editor</module> -->
 	<!-- <module>che-tutorial-customize-menu</module> -->
 	<!-- <module>che-tutorial-customize-panel</module> -->
