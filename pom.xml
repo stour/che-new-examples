@@ -28,7 +28,7 @@
 	<!-- <module>che-tutorial-customize-editor</module> -->
 	<!-- <module>che-tutorial-customize-menu</module> -->
 	<!-- <module>che-tutorial-customize-panel</module> -->
-	<!-- <module>che-tutorial-customize-theme</module> -->
+	<module>che-tutorial-customize-theme</module>
 	<!-- <module>che-tutorial-customize-toolbar</module> -->
 	<!-- <module>che-tutorial-edit-rest-api</module> -->
 	<module>che-tutorial-lifecycle-events</module>
