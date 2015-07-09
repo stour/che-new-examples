@@ -24,19 +24,19 @@
     <packaging>pom</packaging>
     <name>Che Tutorials :: Parent</name>
     <modules>
-        <module>che-tutorial-add-rest-api</module>
-        <module>che-tutorial-customize-editor</module>
-        <module>che-tutorial-customize-menu</module>
-        <module>che-tutorial-customize-panel</module>
-        <module>che-tutorial-customize-theme</module>
-        <module>che-tutorial-customize-toolbar</module>
-        <module>che-tutorial-edit-rest-api</module>
-        <module>che-tutorial-listen-events</module>
-        <module>che-tutorial-project-type</module>
-        <module>che-tutorial-project-wizard</module>
-        <module>che-tutorial-register-process</module>
-        <module>che-tutorial-register-runner</module>
-        <module>che-tutorial-store-data</module>
+	<!-- <module>che-tutorial-add-rest-api</module> -->
+	<!-- <module>che-tutorial-customize-editor</module> -->
+	<!-- <module>che-tutorial-customize-menu</module> -->
+	<!-- <module>che-tutorial-customize-panel</module> -->
+	<!-- <module>che-tutorial-customize-theme</module> -->
+	<!-- <module>che-tutorial-customize-toolbar</module> -->
+	<!-- <module>che-tutorial-edit-rest-api</module> -->
+	<!-- <module>che-tutorial-listen-events</module> -->
+	<module>che-tutorial-project-type</module>
+	<!-- <module>che-tutorial-project-wizard</module> -->
+	<!-- <module>che-tutorial-register-process</module> -->
+	<!-- <module>che-tutorial-register-runner</module> -->
+	<!-- <module>che-tutorial-store-data</module> -->
     </modules>
     <scm>
         <connection>scm:git:git@github.com:codenvy/che-tutorials.git</connection>
