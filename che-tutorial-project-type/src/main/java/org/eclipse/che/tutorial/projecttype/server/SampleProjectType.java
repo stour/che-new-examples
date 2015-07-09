@@ -22,6 +22,5 @@ public class SampleProjectType extends ProjectType {
     public SampleProjectType() {
         super(ProjectAttributes.SAMPLE_PROJECT_TYPE_ID, ProjectAttributes.SAMPLE_PROJECT_TYPE_NAME, true, false);
         addConstantDefinition(Constants.LANGUAGE, "language", ProjectAttributes.PROGRAMMING_LANGUAGE);
- 
     }
 }
