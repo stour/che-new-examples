@@ -21,16 +21,16 @@ import com.google.inject.Inject;
 import com.google.inject.Singleton;
 
 @Singleton
-@Extension(title = "Python", version = "3.0.0")
-public class PythonExtension {
+@Extension(title = "Sample Project Type Extension", version = "1.0.0")
+public class SampleProjectTypeExtension {
     @Inject
-    public PythonExtension(ParserResource parserResource, IconRegistry iconRegistry) {
-        iconRegistry.registerIcon(new Icon(ProjectAttributes.PYTHON_CATEGORY + ".samples.category.icon",
-                                           parserResource.pythonCategoryIcon()));
+    public SampleProjectTypeExtension(ParserResource parserResource, IconRegistry iconRegistry) {
+        iconRegistry.registerIcon(new Icon(ProjectAttributes.SAMPLE_PROJECT_TYPE_CATEGORY + ".samples.category.icon",
+                                           parserResource.sampleProjectTypeCategoryIcon()));
     }
  
     public interface ParserResource extends ClientBundle {
-        @Source("com/codenvy/ide/ext/python/client/image/python.svg")
-        SVGResource pythonCategoryIcon();
+        @Source("org/eclipse/che/tutorial/projecttype/sampletype.svg")
+        SVGResource sampleProjectTypeCategoryIcon();
     }
 }

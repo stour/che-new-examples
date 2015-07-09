@@ -23,26 +23,25 @@ import com.google.inject.Provider;
 import javax.annotation.Nonnull;
 
 /**
- * Provides information for registering Python project type into project wizard.
+ * Provides information for registering sample project type into project wizard.
  *
- * @author Artem Zatsarynnyy
  */
-public class PythonProjectWizardRegistrar implements ProjectWizardRegistrar {
+public class SampleProjectWizardRegistrar implements ProjectWizardRegistrar {
     private final Array<Provider<? extends WizardPage<ImportProject>>> wizardPages;
 
     @Inject
-    public PythonProjectWizardRegistrar() {
+    public SampleProjectWizardRegistrar() {
         wizardPages = Collections.createArray();
     }
 
     @Nonnull
     public String getProjectTypeId() {
-        return ProjectAttributes.PYTHON_ID;
+        return ProjectAttributes.SAMPLE_PROJECT_TYPE_ID;
     }
 
     @Nonnull
     public String getCategory() {
-        return ProjectAttributes.PYTHON_CATEGORY;
+        return ProjectAttributes.SAMPLE_PROJECT_TYPE_CATEGORY;
     }
 
     @Nonnull

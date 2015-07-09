@@ -17,10 +17,10 @@ import org.eclipse.che.tutorial.projecttype.shared.ProjectAttributes;
 import com.google.inject.Singleton;
 
 @Singleton
-public class PythonProjectType extends ProjectType {
+public class SampleProjectType extends ProjectType {
  
-    public PythonProjectType() {
-        super(ProjectAttributes.PYTHON_ID, ProjectAttributes.PYTHON_NAME, true, false);
+    public SampleProjectType() {
+        super(ProjectAttributes.SAMPLE_PROJECT_TYPE_ID, ProjectAttributes.SAMPLE_PROJECT_TYPE_NAME, true, false);
         addConstantDefinition(Constants.LANGUAGE, "language", ProjectAttributes.PROGRAMMING_LANGUAGE);
  
     }

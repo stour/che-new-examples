@@ -11,8 +11,8 @@
 package org.eclipse.che.tutorial.projecttype.shared;
 
 public interface ProjectAttributes {
-    String PYTHON_ID             = "python";
-    String PYTHON_NAME           = "Python Project";
-    String PYTHON_CATEGORY       = "Python";
-    String PROGRAMMING_LANGUAGE  = "python";
+    String SAMPLE_PROJECT_TYPE_ID       = "sample";
+    String SAMPLE_PROJECT_TYPE_NAME     = "Sample Project Type Project";
+    String SAMPLE_PROJECT_TYPE_CATEGORY = "Sample Project Type";
+    String PROGRAMMING_LANGUAGE         = "java";
 }

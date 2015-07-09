@@ -12,17 +12,17 @@ package org.eclipse.che.tutorial.projecttype.server.inject;
 
 import org.eclipse.che.api.project.server.type.ProjectType;
 import org.eclipse.che.inject.DynaModule;
-import org.eclipse.che.tutorial.projecttype.server.PythonProjectType;
+import org.eclipse.che.tutorial.projecttype.server.SampleProjectType;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.multibindings.Multibinder;
 
 @DynaModule
-public class PythonModule extends AbstractModule {
+public class SampleProjectTypeModule extends AbstractModule {
     /** {@inheritDoc} */
     @Override
     protected void configure() {
         Multibinder<ProjectType> projectTypeMultibinder = Multibinder.newSetBinder(binder(), ProjectType.class);
-        projectTypeMultibinder.addBinding().to(PythonProjectType.class);
+        projectTypeMultibinder.addBinding().to(SampleProjectType.class);
     }
 }
