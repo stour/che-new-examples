@@ -31,7 +31,7 @@
 	<!-- <module>che-tutorial-customize-theme</module> -->
 	<!-- <module>che-tutorial-customize-toolbar</module> -->
 	<!-- <module>che-tutorial-edit-rest-api</module> -->
-	<!-- <module>che-tutorial-listen-events</module> -->
+	<module>che-tutorial-lifecycle-events</module>
 	<module>che-tutorial-project-type</module>
 	<!-- <module>che-tutorial-project-wizard</module> -->
 	<!-- <module>che-tutorial-register-process</module> -->
