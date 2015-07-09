@@ -8,14 +8,14 @@
  * Contributors:
  *   Codenvy, S.A. - initial API and implementation
  *******************************************************************************/
-package org.eclipse.che.tutorial.projecttype.server;
+package org.eclipse.che.tutorial.projectwizard.client;
 
 import org.eclipse.che.api.project.shared.dto.ImportProject;
 import org.eclipse.che.ide.api.project.type.wizard.ProjectWizardRegistrar;
 import org.eclipse.che.ide.api.wizard.WizardPage;
 import org.eclipse.che.ide.collections.Array;
 import org.eclipse.che.ide.collections.Collections;
-import org.eclipse.che.tutorial.projecttype.shared.ProjectAttributes;
+import org.eclipse.che.tutorial.projectwizard.shared.ProjectAttributes;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
