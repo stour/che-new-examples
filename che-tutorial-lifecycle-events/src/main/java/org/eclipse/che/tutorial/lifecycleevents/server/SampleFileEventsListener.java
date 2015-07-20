@@ -10,14 +10,19 @@
  *******************************************************************************/
 package org.eclipse.che.tutorial.lifecycleevents.server;
 
+import java.io.IOException;
+
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.inject.Inject;
 import javax.inject.Singleton;
+import javax.websocket.EncodeException;
 
 import org.eclipse.che.api.core.notification.EventService;
 import org.eclipse.che.api.core.notification.EventSubscriber;
 import org.eclipse.che.api.vfs.server.observation.VirtualFileEvent;
+import org.everrest.websockets.WSConnectionContext;
+import org.everrest.websockets.message.ChannelBroadcastMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -38,20 +43,39 @@ public class SampleFileEventsListener {
             public void onEvent(VirtualFileEvent event) {
                 final String workspace = event.getWorkspaceId();
                 final String path = event.getPath();
+                String eventType = "";
 
                 switch (event.getType()) {
                     case CONTENT_UPDATED:
-                    case CREATED:
-                    case DELETED:
-                    case MOVED:
-                    case RENAMED:
-                    default:
-                        try {
-                            LOG.info("Handle event for path " + path + " in workspace " + workspace);
-                        } catch (Exception e) {
-                            LOG.error(e.getMessage(), e);
-                        }
+                        eventType = "content updated";
                         break;
+                    case CREATED:
+                        eventType = "created";
+                        break;
+                    case DELETED:
+                        eventType = "deleted";
+                        break;
+                    case MOVED:
+                        eventType = "moved";
+                        break;
+                    case RENAMED:
+                        eventType = "renamed";
+                        break;
+                    default:
+                        eventType = "default";
+                        break;
+                }
+
+                try {
+                    final ChannelBroadcastMessage bm = new ChannelBroadcastMessage();
+                    String projectPath = path.split("/")[0];
+                    bm.setChannel(String.format("file:status:%d", workspace + "/" + projectPath));
+                    bm.setBody(String.format("{\"message\":%s}", "Operation >"  + eventType + "< on file " + workspace + path + " successful"));
+                    WSConnectionContext.sendMessage(bm);
+                } catch (EncodeException e) {
+                    LOG.warn(e.getMessage(), e);
+                } catch (IOException e) {
+                    LOG.warn(e.getMessage(), e);
                 }
             }
         };

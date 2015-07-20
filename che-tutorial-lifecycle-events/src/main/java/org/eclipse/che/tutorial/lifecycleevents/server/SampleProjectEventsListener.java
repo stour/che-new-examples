@@ -10,14 +10,19 @@
  *******************************************************************************/
 package org.eclipse.che.tutorial.lifecycleevents.server;
 
+import java.io.IOException;
+
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.inject.Inject;
 import javax.inject.Singleton;
+import javax.websocket.EncodeException;
 
 import org.eclipse.che.api.core.notification.EventService;
 import org.eclipse.che.api.core.notification.EventSubscriber;
 import org.eclipse.che.api.project.server.ProjectCreatedEvent;
+import org.everrest.websockets.WSConnectionContext;
+import org.everrest.websockets.message.ChannelBroadcastMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -35,9 +40,18 @@ public class SampleProjectEventsListener {
         projectCreatedEventSubscriber = new EventSubscriber<ProjectCreatedEvent>() {
             @Override
             public void onEvent(ProjectCreatedEvent event) {
-                final String workspace = event.getWorkspaceId();
-                final String projectPath = event.getProjectPath();
-                LOG.info("Handle event for project at path " + projectPath + " in workspace " + workspace);
+                    try {
+                        final ChannelBroadcastMessage bm = new ChannelBroadcastMessage();
+                        final String workspace = event.getWorkspaceId();
+                        final String projectPath = event.getProjectPath();
+                        bm.setChannel(String.format("project:status:%d", workspace + "/" + projectPath));
+                        bm.setBody(String.format("{\"message\":%s}", "Project " + workspace + projectPath + "successfully created"));
+                        WSConnectionContext.sendMessage(bm);
+                    } catch (EncodeException e) {
+                        LOG.warn(e.getMessage(), e);
+                    } catch (IOException e) {
+                        LOG.warn(e.getMessage(), e);
+                    }
             }
         };
     }
