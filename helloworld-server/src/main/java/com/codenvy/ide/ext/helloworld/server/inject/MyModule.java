@@ -11,7 +11,6 @@
 package com.codenvy.ide.ext.helloworld.server.inject;
 
 import com.codenvy.ide.ext.helloworld.server.HelloWorldService;
-import com.codenvy.ide.ext.helloworld.server.MyDependency;
 import org.eclipse.che.inject.DynaModule;
 import com.google.inject.AbstractModule;
 
@@ -25,6 +24,5 @@ public class MyModule extends AbstractModule {
     @Override
     protected void configure() {
         bind(HelloWorldService.class); // required, otherwise everrest framework won't recognize it
-        bind(MyDependency.class); // may be omitted, class has simple constructor
     }
 }

@@ -22,17 +22,15 @@ import javax.ws.rs.PathParam;
 @Path("hello")
 public class HelloWorldService {
     
-    private MyDependency d;
-    
     @Inject
-    public HelloWorldService(MyDependency d) {
-        this.d = d;
+    public HelloWorldService() {
+
     }
     
     @GET
     @Path("{name}")
     public String sayHello(@PathParam("name") String name ) {
-       return d.sayHello(name);
+       return "Hello, " + name;
     }
 
 }
