@@ -37,6 +37,8 @@
 	<!-- <module>che-tutorial-register-process</module> -->
 	<!-- <module>che-tutorial-register-runner</module> -->
 	<!-- <module>che-tutorial-store-data</module> -->
+	<module>helloworld-ide</module>
+	<module>helloworld-server</module>
     </modules>
     <scm>
         <connection>scm:git:git@github.com:codenvy/che-tutorials.git</connection>
