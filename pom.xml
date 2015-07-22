@@ -16,13 +16,13 @@
     <parent>
         <artifactId>maven-depmgt-pom</artifactId>
         <groupId>org.eclipse.che.depmgt</groupId>
-        <version>3.11.1-SNAPSHOT</version>
+        <version>3.11.5-SNAPSHOT</version>
     </parent>
-    <groupId>org.eclipse.che.tutorials</groupId>
-    <artifactId>che-tutorials-parent</artifactId>
-    <version>3.11.1-SNAPSHOT</version>
+    <groupId>org.eclipse.che.examples</groupId>
+    <artifactId>che-examples-parent</artifactId>
+    <version>3.11.5-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>Che Tutorials :: Parent</name>
+    <name>Che Examples :: Parent</name>
     <modules>
 	<module>che-tutorial-add-rest-api</module>
 	<!-- <module>che-tutorial-customize-editor</module> -->
@@ -40,12 +40,6 @@
 	<module>helloworld-ide</module>
 	<module>helloworld-server</module>
     </modules>
-    <scm>
-        <connection>scm:git:git@github.com:codenvy/che-tutorials.git</connection>
-        <developerConnection>scm:git:git@github.com:codenvy/che-tutorials.git</developerConnection>
-        <tag>HEAD</tag>
-        <url>https://github.com/codenvy/che-tutorials</url>
-    </scm>
     <properties>
         <dto-generator-out-directory>${project.build.directory}/generated-sources/dto/</dto-generator-out-directory>
         <gwt.test.skip>true</gwt.test.skip>

@@ -14,13 +14,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>che-tutorials-parent</artifactId>
-        <groupId>org.eclipse.che.tutorials</groupId>
+        <artifactId>che-examples-parent</artifactId>
+        <groupId>org.eclipse.che.examples</groupId>
         <version>3.11.5-SNAPSHOT</version>
     </parent>
     <artifactId>helloworld-server</artifactId>
     <packaging>jar</packaging>
-    <name>Che Tutorial :: Hello World Server</name>
+    <name>Che Examples :: Hello World Server</name>
     <dependencies>
         <dependency>
             <groupId>org.eclipse.che.core</groupId>
