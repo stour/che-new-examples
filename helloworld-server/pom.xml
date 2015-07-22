@@ -20,7 +20,7 @@
     </parent>
     <artifactId>helloworld-server</artifactId>
     <packaging>jar</packaging>
-    <name>Che Examples :: Hello World Server</name>
+    <name>Che Example :: Hello World Server</name>
     <dependencies>
         <dependency>
             <groupId>org.eclipse.che.core</groupId>
