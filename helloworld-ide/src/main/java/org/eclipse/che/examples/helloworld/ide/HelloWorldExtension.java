@@ -10,17 +10,6 @@
  *******************************************************************************/
 package org.eclipse.che.examples.helloworld.ide;
 
-/**
- * Codenvy API imports. In this extension we'll need
- * to talk to Parts and Action API. Gin and Singleton
- * imports are obligatory as well for any extension
- */
-
-import org.eclipse.che.examples.helloworld.ide.action.HelloWorldAction;
-import org.eclipse.che.ide.api.action.ActionManager;
-import org.eclipse.che.ide.api.action.DefaultActionGroup;
-import org.eclipse.che.ide.api.action.IdeActions;
-import org.eclipse.che.ide.api.constraints.Constraints;
 import org.eclipse.che.ide.api.extension.Extension;
 import org.eclipse.che.ide.api.notification.Notification;
 import org.eclipse.che.ide.api.notification.Notification.Type;
@@ -35,27 +24,11 @@ import com.google.inject.Singleton;
  */
 @Singleton
 @Extension(title = "Hello world", version = "1.0.0")
-public class HelloWorldExtension
+public class HelloWorldExtension {
 
-/**
- * All menu items are actions. Here we register a new action in actionManager - HelloWorldID. Then, we get it in the DefaultActionGroup
- * which is general class for all items on the toolbar, context menus etc.
- */
-{
     @Inject
-    public HelloWorldExtension(ActionManager actionManager, HelloWorldAction action, NotificationManager notificationManager) {
-        actionManager.registerAction("helloWorldID", action);
-
-        DefaultActionGroup contextMenu = (DefaultActionGroup)actionManager.getAction(IdeActions.GROUP_MAIN_CONTEXT_MENU);
-
-        /**
-         * Finally, this action is added to a menu
-         */
-        contextMenu.add(action, Constraints.LAST);
-
-
+    public HelloWorldExtension(NotificationManager notificationManager) {
         Notification notification = new Notification("Hello World", Type.INFO);
         notificationManager.showNotification(notification);
-
     }
 }
