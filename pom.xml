@@ -24,19 +24,19 @@
     <packaging>pom</packaging>
     <name>Che Examples :: Parent</name>
     <modules>
-	<module>che-tutorial-add-rest-api</module>
-	<!-- <module>che-tutorial-customize-editor</module> -->
-	<!-- <module>che-tutorial-customize-menu</module> -->
-	<!-- <module>che-tutorial-customize-panel</module> -->
-	<module>che-tutorial-customize-theme</module>
-	<!-- <module>che-tutorial-customize-toolbar</module> -->
-	<!-- <module>che-tutorial-edit-rest-api</module> -->
-	<module>che-tutorial-lifecycle-events</module>
-	<module>che-tutorial-project-type</module>
-	<module>che-tutorial-project-wizard</module>
-	<!-- <module>che-tutorial-register-process</module> -->
-	<!-- <module>che-tutorial-register-runner</module> -->
-	<!-- <module>che-tutorial-store-data</module> -->
+	<module>che-example-add-rest-api</module>
+	<!-- <module>che-example-customize-editor</module> -->
+	<!-- <module>che-example-customize-menu</module> -->
+	<!-- <module>che-example-customize-panel</module> -->
+	<module>che-example-customize-theme</module>
+	<!-- <module>che-example-customize-toolbar</module> -->
+	<!-- <module>che-example-edit-rest-api</module> -->
+	<module>che-example-lifecycle-events</module>
+	<module>che-example-project-type</module>
+	<module>che-example-project-wizard</module>
+	<!-- <module>che-example-register-process</module> -->
+	<!-- <module>che-example-register-runner</module> -->
+	<!-- <module>che-example-store-data</module> -->
 	<module>helloworld-ide</module>
 	<module>helloworld-server</module>
     </modules>
