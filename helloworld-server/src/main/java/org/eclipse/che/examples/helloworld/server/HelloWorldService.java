@@ -12,6 +12,7 @@ package org.eclipse.che.examples.helloworld.server;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 
 /**
  * Register a RESTful server side component
@@ -25,9 +26,9 @@ public class HelloWorldService {
     }
     
     @GET
-    @Path("world")
-    public String sayHello() {
-       return "Hello world !";
+    @Path("{name}")
+    public String sayHello(@PathParam("name") String name) {
+       return "Hello " + name + " !";
     }
 
 }
